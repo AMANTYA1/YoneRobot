@@ -159,6 +159,7 @@ def start(update: Update, context: CallbackContext):
         InlineKeyboardButton(
             text="About", callback_data="yone_"
         ),
+        InlineKeyboardButton("Inline", switch_inline_query_current_chat="")
     ],
     [
         InlineKeyboardButton(text="Helps & Commands❔", callback_data="yone_help"),
