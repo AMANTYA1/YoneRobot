@@ -109,7 +109,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="yone_help")]]
                     ),
                 )
                 send_admin_help(
@@ -156,13 +156,6 @@ def start(update: Update, context: CallbackContext):
             text="➕️ Add me to your chat ➕️", url=f"https://t.me/{context.bot.username}?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="Admin", callback_data="admin_back"),
-        InlineKeyboardButton(
-            text="Users", callback_data="user_back"
-        ),
-    ],
-    [
-        InlineKeyboardButton(text="Tools", callback_data="tools_back"),
         InlineKeyboardButton(
             text="About", callback_data="yone_"
         ),
