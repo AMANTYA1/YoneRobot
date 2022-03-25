@@ -116,21 +116,21 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     ADMIN[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="admin_back")]]
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="yone_help")]]
                     ),
                 )
                 send_user_help(
                     update.effective_chat.id,
                     USER[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="user_back")]]
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="yone_help")]]
                     ),
                 )
                 send_tools_help(
                     update.effective_chat.id,
                     USER[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="tools_back")]]
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="yone_help")]]
                     ),
                 )
 
@@ -233,7 +233,8 @@ def yone_about_callback(update: Update, context: CallbackContext):
         )
     elif query.data == "yone_back":
         query.message.edit_text(
-                text="""""",
+                text="""Hey there! My name is Merissa.
+I can help manage your groups with useful features, feel free to add me to your groups!""",
                 reply_markup=InlineKeyboardMarkup([
     [
         InlineKeyboardButton(
