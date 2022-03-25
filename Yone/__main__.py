@@ -164,11 +164,11 @@ def start(update: Update, context: CallbackContext):
     [
         InlineKeyboardButton(text="Tools", callback_data="tools_back"),
         InlineKeyboardButton(
-            text="Bot Info", callback_data="yone_"
+            text="About", callback_data="yone_"
         ),
     ],
     [
-        InlineKeyboardButton(text="Helps & Commands❔", callback_data="help_back"),
+        InlineKeyboardButton(text="Helps & Commands❔", callback_data="yone_help"),
     ],
 ]),
                 parse_mode=ParseMode.MARKDOWN,
@@ -240,8 +240,7 @@ def yone_about_callback(update: Update, context: CallbackContext):
         )
     elif query.data == "yone_back":
         query.message.edit_text(
-                PM_START_TEXT.format(
-                        escape_markdown(first_name), escape_markdown(context.bot.first_name)),
+                text="""""",
                 reply_markup=InlineKeyboardMarkup([
     [
         InlineKeyboardButton(
@@ -261,6 +260,30 @@ def yone_about_callback(update: Update, context: CallbackContext):
     ],
     [
         InlineKeyboardButton(text="Helps & Commands❔", callback_data="help_back"),
+    ],
+]),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+    elif query.data == "yone_help":
+        query.message.edit_text(
+                text="""Welcome To Help Menu
+
+Select All Commands For More Help Or Choose Categories.""",
+                reply_markup=InlineKeyboardMarkup([
+    [
+        InlineKeyboardButton(
+            text="➕️ All Commands ➕️", callback_data="help_back"),
+    ],
+    [
+        InlineKeyboardButton(text="Admin", callback_data="admin_back"),
+        InlineKeyboardButton(
+            text="Users", callback_data="user_back"
+        ),
+    ],
+    [
+        InlineKeyboardButton(text="Tools & Extras", callback_data="tools_back"),
     ],
 ]),
                 parse_mode=ParseMode.MARKDOWN,
