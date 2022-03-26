@@ -183,10 +183,10 @@ def start(update: Update, context: CallbackContext):
                 [
                     InlineKeyboardButton(
                         text="SUPPORT", 
-                        url=f"https://t.me/{SUPPORT_CHAT}"),
+                        url=f"https://t.me/PrincexSupport"),
                     InlineKeyboardButton(
                         text="DEVLOPER", 
-                        url=f"https://t.me/{OWNER_USERNAME}")
+                        url=f"https://t.me/PrincexBots")
                     
                 ],
                 
@@ -237,24 +237,18 @@ def yone_about_callback(update: Update, context: CallbackContext):
                 text="""Hey there! My name is Merissa.
 I can help manage your groups with useful features, feel free to add me to your groups!""",
                 reply_markup=InlineKeyboardMarkup([
-    [
+[
         InlineKeyboardButton(
             text="➕️ Add me to your chat ➕️", url=f"https://t.me/{context.bot.username}?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="Admin", callback_data="admin_back"),
         InlineKeyboardButton(
-            text="Users", callback_data="user_back"
+            text="About", callback_data="yone_"
         ),
+        InlineKeyboardButton("Inline", switch_inline_query_current_chat="")
     ],
     [
-        InlineKeyboardButton(text="Tools", callback_data="tools_back"),
-        InlineKeyboardButton(
-            text="Bot Info", callback_data="yone_"
-        ),
-    ],
-    [
-        InlineKeyboardButton(text="Helps & Commands❔", callback_data="help_back"),
+        InlineKeyboardButton(text="Helps & Commands❔", callback_data="yone_help"),
     ],
 ]),
                 parse_mode=ParseMode.MARKDOWN,
