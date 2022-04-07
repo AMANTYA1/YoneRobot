@@ -33,7 +33,7 @@ class Language:
         return to_return
 
     def get_language(self, language: str) -> str:
-        return self.languages[language][en.yaml]
+        return self.languages[language]["language"]
 
 
 class StringNotFound(Exception):
