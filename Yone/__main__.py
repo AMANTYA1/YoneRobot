@@ -34,7 +34,6 @@ from Yone import (
     telethn,
     updater)
 
-from Yone.Plugins import ALL_MODULES
 from Yone.__help__ import (
 get_help, 
 help_button, 
@@ -57,6 +56,8 @@ ADMIN,
 USER,
 TOOLS )
 
+from Yone.Plugins import ALL_MODULES
+from Yone.Plugins.language import gs
 
 def get_readable_time(seconds: int) -> str:
     count = 0
