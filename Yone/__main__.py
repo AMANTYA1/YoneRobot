@@ -148,7 +148,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             update.effective_message.reply_text(
-                text=gs(chat.id, "pm_start_text")
+                text=gs(chat.id, "pm_start_text"),
                 reply_markup=InlineKeyboardMarkup([
     [
         InlineKeyboardButton(
