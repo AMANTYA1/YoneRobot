@@ -9,7 +9,7 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 
 from Yone import dispatcher
 from Yone.Handlers.validation import user_admin, user_admin_no_reply
-from Yone.language import get_string, get_languages, get_language
+from Yone.Language import get_string, get_languages, get_language
 
 
 
