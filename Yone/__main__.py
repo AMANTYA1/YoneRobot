@@ -148,8 +148,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             update.effective_message.reply_text(
-                PM_START_TEXT.format(
-                        escape_markdown(first_name), escape_markdown(context.bot.first_name)),
+                text=gs(chat.id, "pm_start_text")
                 reply_markup=InlineKeyboardMarkup([
     [
         InlineKeyboardButton(
@@ -169,16 +168,7 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-            text = (
-                f"Hello {mention_html(user.id, user.first_name)}, I'm {bot.first_name}\n\n"
-                f"┏━━━━━━━━━━━━━━━━━━━\n"
-                f"┣[• Owner : @{OWNER_USERNAME}  \n"
-                f"┣[• Uptime : {uptime} \n"
-                f"┣[• Core : {psutil.cpu_percent()}%\n"
-                f"┣[• Python   : Ver {python_version()} \n"
-                f"┗━━━━━━━━━━━━━━━━━━━")
-        
-
+            text=gs(chat.id, "group_start_text")
             keyboard = InlineKeyboardMarkup([
                 [
                     InlineKeyboardButton(
@@ -193,7 +183,9 @@ def start(update: Update, context: CallbackContext):
                 ])
             message.reply_photo(
                         PHOTO,
-                        caption=(text),
+                        caption=(text).format(
+                escape_markdown(uptime),
+                ),
                         reply_markup=keyboard,
                         parse_mode=ParseMode.HTML,
                         
@@ -346,3 +338,4 @@ if __name__ == "__main__":
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     main()
+text=gs(chat.id, "pm_start_text")
