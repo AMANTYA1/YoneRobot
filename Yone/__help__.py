@@ -8,6 +8,7 @@ from telegram.utils.helpers import escape_markdown
 from Yone.Handlers.validation import is_user_admin
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from os.path import isfile
+from Yone.Plugins.language import gs
 
 
 HELP_STRINGS = """Hey there! My name is *{}*.
@@ -405,10 +406,10 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "Here is the help for the *{}* module:\n".format(
+                gs(chat.id, "pm_help_module_text").format(
                     HELPABLE[module].__mod_name__
                 )
-                + HELPABLE[module].__help__
+                + help_text
             )
             query.message.edit_text( 
                 text=text,
@@ -425,7 +426,7 @@ def help_button(update, context):
         elif prev_match:
             curr_page = int(prev_match.group(1))
             query.message.edit_text(
-                text=HELP_STRINGS,
+                text=gs(chat.id,"pm_help_text"),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, HELPABLE, "help")
@@ -435,7 +436,7 @@ def help_button(update, context):
         elif next_match:
             next_page = int(next_match.group(1))
             query.message.edit_text(
-                text=HELP_STRINGS,
+                text=gs(chat.id,"pm_help_text"),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(next_page + 1, HELPABLE, "help")
@@ -444,7 +445,7 @@ def help_button(update, context):
 
         elif back_match:
             query.message.edit_text(
-                text=HELP_STRINGS,
+                text=gs(chat.id,"pm_help_text"),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, HELPABLE, "help")
