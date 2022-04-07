@@ -409,7 +409,7 @@ def help_button(update, context):
                 gs(chat.id, "pm_help_module_text").format(
                     HELPABLE[module].__mod_name__
                 )
-                + help_text
+                + HELPABLE[module].__help__
             )
             query.message.edit_text( 
                 text=text,
