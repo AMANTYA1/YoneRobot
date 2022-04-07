@@ -19,11 +19,11 @@ class Language:
             return en_string
 
     def reload_strings(self) -> None:
-        for filename in os.listdir(r"./Yone/Language"):
+        for filename in os.listdir(r"./Yone/langs"):
             if filename.endswith(".yaml"):
                 language_name = filename[:-5]
                 self.languages[language_name] = yaml.safe_load(
-                    open(r"./Yone/Language/" + filename, encoding="utf8")
+                    open(r"./Telegram/langs/" + filename, encoding="utf8")
                 )
 
     def get_languages(self) -> Dict:
