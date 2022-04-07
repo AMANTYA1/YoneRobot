@@ -397,6 +397,7 @@ def tools_help_button(update, context):
         pass
 
 def help_button(update, context):
+    chat = update.effective_chat
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
