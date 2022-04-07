@@ -29,11 +29,11 @@ class Language:
     def get_languages(self) -> Dict:
         to_return: Dict = {}
         for language in self.languages:
-            to_return[language] = self.languages[language]["Language"]
+            to_return[language] = self.languages[language]["language"]
         return to_return
 
     def get_language(self, language: str) -> str:
-        return self.languages[language]["language"]
+        return self.languages[language]['language']
 
 
 class StringNotFound(Exception):
