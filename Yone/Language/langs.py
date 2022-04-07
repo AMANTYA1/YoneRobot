@@ -29,7 +29,7 @@ class Language:
     def get_languages(self) -> Dict:
         to_return: Dict = {}
         for language in self.languages:
-            to_return[language] = self.languages[language]["language"]
+            to_return[language] = self.languages[language]["Language"]
         return to_return
 
     def get_language(self, language: str) -> str:
