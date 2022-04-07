@@ -159,7 +159,7 @@ def start(update: Update, context: CallbackContext):
         InlineKeyboardButton(
             text="About", callback_data="yone_"
         ),
-        InlineKeyboardButton("Language 🇺🇲", callback_data="setLang_"),
+        
     ],
     [
         InlineKeyboardButton(text="Helps & Commands❔", callback_data="yone_help"),
@@ -238,7 +238,7 @@ I can help manage your groups with useful features, feel free to add me to your 
         InlineKeyboardButton(
             text="About", callback_data="yone_"
         ),
-        InlineKeyboardButton("Language 🇺🇲", callback_data="setLang_"),
+        
     ],
     [
         InlineKeyboardButton(text="Helps & Commands❔", callback_data="yone_help"),
