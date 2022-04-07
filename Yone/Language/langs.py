@@ -19,7 +19,7 @@ class Language:
             return en_string
 
     def reload_strings(self) -> None:
-        for filename in os.listdir(r"./Yone/Language/"):
+        for filename in os.listdir(r"./Yone/Language"):
             if filename.endswith(".yaml"):
                 language_name = filename[:-5]
                 self.languages[language_name] = yaml.safe_load(
@@ -33,7 +33,7 @@ class Language:
         return to_return
 
     def get_language(self, language: str) -> str:
-        return self.languages[language]['language']
+        return self.languages[language]["language"]
 
 
 class StringNotFound(Exception):
