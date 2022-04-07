@@ -1,5 +1,5 @@
 import itertools
-import Yone.modules.sql.language_sql as sql
+import Yone.Database.language_sql as sql
 
 from typing import Union, List, Dict, Callable, Generator, Any
 
