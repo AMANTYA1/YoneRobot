@@ -8,7 +8,7 @@ from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 
 from Yone import dispatcher
-from Yone.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from Yone.Handlers.validation import user_admin, user_admin_no_reply
 from Yone.language import get_string, get_languages, get_language
 
 
