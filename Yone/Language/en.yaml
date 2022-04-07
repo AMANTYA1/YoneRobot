@@ -55,7 +55,7 @@ pm_about_credit_text: |
 
   Here Developers Making And Give Inspiration For Made The Bawihtei Robot
 pm_help_text: |
-  *✺ Click on the button bellow to get description about specifics command. ✺*
+  Click on the button bellow to get description about specifics command.
 pm_help_module_text: "Here is the help for the *{}* module :\n\n"
 
 # Group Help Text
